@@ -1,5 +1,6 @@
 package BinaryTreeInorderTraversal;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TreeNode {
@@ -22,16 +23,26 @@ public class TreeNode {
         this.right = right;
     }
 }
-/*
 
-public class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
+class Solution {
+    public static List<Integer> inorderTraversal(TreeNode root) {
 
-        return null;
+        List<Integer> list = new ArrayList<>();
+
+        inorder(root, list);
+
+        return list;
     }
 
-    public static void main(String[] args) {
+    public static void inorder(TreeNode root, List<Integer> list) {
+
+        if (root == null) {
+            return;
+        }
+
+        inorder(root.left, list);
+        list.add(root.val);
+        inorder(root.right, list);
 
     }
 }
-*/
