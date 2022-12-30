@@ -4,6 +4,7 @@ public class Solution {
 
     ListNode start = new ListNode();
 
+
     public ListNode reverseList(ListNode head) {
 
         if (head == null) {
@@ -40,7 +41,7 @@ public class Solution {
         node2.next = node3;
         node3.next = node4;
 
-        System.out.println(solution.reverse(head));
+        System.out.println(solution.reverseList(head));
     }
 
 }
