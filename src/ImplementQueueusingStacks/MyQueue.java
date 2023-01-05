@@ -1,28 +1,49 @@
 package ImplementQueueusingStacks;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class MyQueue {
 
-        private Queue<Integer> q = new LinkedList<>();
+    private Stack<Integer> s1 = new Stack<>();
+    private Stack<Integer> s2 = new Stack<>();
 
     public void push(int x) {
-        q.add(x);
-        for (int i = 0; i < q.size() - 1; i++) {
-            q.add(q.remove());
-        }
+       s1.push(x);
     }
+
     public int pop() {
-    return q.remove();
+       if (!s2.empty()){
+           return s2.pop();
+       }
+       else {
+           while (!s1.empty()){
+               s2.push(s1.pop());
+           }
+       }
+       return s2.pop();
     }
 
     public int peek() {
-    return q.peek();
+        if (!s2.empty()){
+            return s2.peek();
+        }
+        else {
+            while (!s1.empty()){
+                s2.push(s1.pop());
+            }
+        }
+        return s2.peek();
     }
 
     public boolean empty() {
-return q.isEmpty();
+        return s1.isEmpty() && s2.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        return "MyQueue{" +
+                "s1=" + s1 +
+                '}';
     }
 
     public static void main(String[] args) {
