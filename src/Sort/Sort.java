@@ -1,6 +1,7 @@
 package Sort;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Sort {
 
@@ -125,18 +126,18 @@ public class Sort {
         Sort sort = new Sort();
 
         long startTime = System.currentTimeMillis();
-/*        Random random = new Random();
-        int[] rand = new int[1000];
+        Random random = new Random();
+        int[] rand = new int[100000];
         for (int i = 0; i < rand.length; i++) {
             rand[i] = random.nextInt(0, 100000);
-        }*/
+        }
 
-        int[] list = {6, 2, 3, 2, 4, 3, 2, 1};
+//        int[] list = {6, 2, 3, 2, 4, 3, 2, 1};
 //        System.out.println(Arrays.toString(rand));
-        sort.mergeSort((list));
-        System.out.println(Arrays.toString(list));
+        sort.mergeSort((rand));
+//        System.out.println(Arrays.toString(list));
 
-//        System.out.println(Arrays.toString(sort.selectionSort(rand)));
+//        sort.selectionSort(rand);
 //        System.out.println(Arrays.toString(sort.bubbleSort(rand)));
         long endTime = System.currentTimeMillis() - startTime;
         System.out.println(endTime);

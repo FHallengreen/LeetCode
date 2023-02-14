@@ -9,32 +9,34 @@ public class Solution {
 
 
     public List<String> binaryTreePaths(TreeNode root) {
-
-        List<String> list = new ArrayList<>();
-        List<Integer> num = new ArrayList<>();
-
+        List<String> paths = new ArrayList<>();
         if (root == null) {
-            return list;
+            return paths;
         }
+        treeRecursion(root, "", paths);
+        return paths;
+    }
 
-        TreeNode right = root.right;
-        TreeNode left = root.left;
-
-        num.add(root.val);
-
-        while (left != null) {
-            num.add(left.val);
-            if (left.right != null){
-            num.add(left.right.val);
-            }
-            left = left.left;
+    private void treeRecursion(TreeNode node, String path, List<String> paths) {
+        if (node.left == null && node.right == null) {
+            paths.add(path + node.val + "");
+            return;
         }
-        return list;
+        if (node.left != null) {
+            treeRecursion(node.left, path + node.val + "->", paths);
+        }
+        if (node.right != null) {
+            treeRecursion(node.right, path + node.val + "->", paths);
+        }
     }
 
     public static void main(String[] args) {
 
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.right = new TreeNode(3);
+        root.right = new TreeNode(5);
         Solution solution = new Solution();
-
+        System.out.println(solution.binaryTreePaths(root));
     }
 }
