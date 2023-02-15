@@ -1,6 +1,5 @@
 package MergeNodesinBetweenZeros;
 
-import BinaryTreeInorderTraversal.TreeNode;
 import ReverseLinkedList.ListNode;
 
 public class Solution {
@@ -16,18 +15,18 @@ public class Solution {
         while (head.next != null) {
             int count = 0;
             head = head.next;
-            while (head.val != 0) {
+            while (head != null && head.val != 0) {
                 count += head.val;
                 head = head.next;
             }
             if (node == null){
             node = new ListNode(count);
-            current = node.next;
+            current = node;
             }
             else {
-                current = new ListNode(count);
-                current = current.next;
-                node.next = current;
+                ListNode newNode = new ListNode(count);
+                current.next = newNode;
+                current = newNode;
             }
         }
         return node;
