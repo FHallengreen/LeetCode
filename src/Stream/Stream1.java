@@ -8,7 +8,6 @@ import java.util.stream.IntStream;
 public class Stream1 {
 
     public static void main(String[] args) {
-/*
         List<String> animals = Arrays.asList("Monkey,Horse,Tiger,Cow,Mouse".split(","));
         List <String> newAnimals = animals.stream().filter(animal -> !animal.equals("Tiger"))
                 .map(String::toUpperCase).sorted().toList();
@@ -19,7 +18,7 @@ public class Stream1 {
         IntStream.range(1,26).filter(n -> n%2 == 0).forEach(System.out::println);
 
         System.out.println("****************");
-
+/*
 //        Map
         List<String> names = Arrays.asList("John","Smith","Peter","Ole");
         List<String> newNames = names.stream().map(String::toUpperCase).collect(Collectors.toList());
@@ -48,7 +47,6 @@ public class Stream1 {
         System.out.println(sum);
 
         System.out.println("****************");
-*/
 
         //lazy evaluation
         List<String> animals3 = Arrays.asList("Monkey,Horse,Tiger,Cow,Mouse".split(","));
@@ -64,7 +62,7 @@ public class Stream1 {
 
         //parallel
         List<String> animals = Arrays.asList("Monkey,Horse,Tiger,Cow,Mouse".split(","));
-        animals.parallelStream().forEach(System.out::println);
+        animals.parallelStream().forEach(System.out::println);*/
 
     }
 }
