@@ -26,7 +26,6 @@ public class Solution {
                 patternMap.put(pattern.charAt(i), words[i]);
                 sMap.put(words[i], pattern.charAt(i));
             }
-
         }
         return true;
     }
