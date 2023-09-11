@@ -16,18 +16,18 @@ public class Solution {
         for (int i = 0; i < nums.length; i++) {
             sumRight = sum - sumLeft - nums[i];
 
-            if (sumLeft == sumRight){
+            if (sumLeft == sumRight) {
                 return i;
             }
             sumLeft += nums[i];
         }
-    return -1;
+        return -1;
     }
 
     public static void main(String[] args) {
 
         Solution solution = new Solution();
-        int [] nums = {1,7,3,6,5,6};
+        int[] nums = {1, 7, 3, 6, 5, 6};
         System.out.println(solution.pivotIndex(nums));
 
     }
